@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #1a0a2e;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3e115a;
+  border-bottom: 1px solid #1e293b;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #26b4ec;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #1d20b2;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: 2px solid #6366f1;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+
+.btn-outline:hover {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  padding-top: 80px;
+}
+
+.hero-greeting {
+  font-size: 18px;
+  color: #6366f1;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: 64px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.hero-role {
+  font-size: 24px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-right: 2px solid #6366f1;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 3s steps(40) 1s forwards, blink 0.7s step-end infinite;
+  width: fit-content;
+
+}
+
+@keyframes typing{
+  from{width: 0;}
+  to{width: 29ch;}
+}
+
+@keyframes blink{
+  50%{border-color: transparent;}
+}
+
+.hero-bio {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* SECTIONS */
+section {
+  padding: 100px 80px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 16px;
+}
+
+/* ABOUT */
+.about-text {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  max-width: 600px;
+}
+
+.skill-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 28px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #312e81;
+  color: #a5b4fc;
+  margin-right: 6px;
+  margin-bottom: 12px;
+}
+
+/* CONTACT */
+.contact-text {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-links a.active {
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #6366f1;
+}
+
+@media (max-width: 768px){
+  .navbar {
+    padding: 16px 24px;
+  }
+  .nav-links{
+    gap: 20px;
+  }
+  .hero{
+    padding: 0 24px;
+    padding-top: 100px;
+  }
+  .hero-name{
+    font-size: 48px;
+  }
+  .hero-role{
+    font-size: 18px;
+  }
+  section{
+    padding: 60px 24px;
+  }
+  .projects-grid{
+    grid-template-columns: 1fr;
+  }
+  .contact-links{
+    flex-direction: column;
+    gap: 12px;
+  }
+}
