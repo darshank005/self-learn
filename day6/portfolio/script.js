@@ -11,19 +11,22 @@ const projects = [
     title: "GitHub User Search",
     desc: "Search any GitHub user and view their profile stats including repos and followers. Built with vanilla JS and GitHub API.",
     tags: ["JavaScript", "Fetch API", "HTML/CSS"],
-    github: "https://github.com/darshank005/self-learn/blob/main/day5/practice.html"
+    github: "https://github.com/darshank005/self-learn/blob/main/day5/practice.html",
+    live: "#"
   },
   {
     title: "Skill Filter App",
     desc: "Dynamic skill filtering app that renders and filters skills by level using arrays and DOM manipulation.",
     tags: ["JavaScript", "DOM", "Arrays"],
-    github: "https://github.com/darshank005/self-learn/blob/main/day4/practice.html"
+    github: "https://github.com/darshank005/self-learn/blob/main/day4/practice.html",
+    live: "#"
   },
   {
     title: "Portfolio Website",
     desc: "Personal developer portfolio built from scratch with HTML, CSS and JavaScript. Fully responsive.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/darshank005/self-learn/tree/main/day6",
+    live: "#"
   }
 ];
 
@@ -84,21 +87,3 @@ window.addEventListener("scroll", () => {
 renderSkills();
 renderProjects();
 
-async function getUsers() {
-   try{ const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const users = await response.json();
-    console.log(users[0]);
-
-    users.forEach((user) => {
-        const li = document.createElement("li");
-        li.innerText = user.name +" - "+user.address.city;
-        document.getElementById("userslist").appendChild(li);
-    }
-);
-   } catch(error){
-    console.log("Something went wrong: ",error);
-    document.getElementById("userslist").innerText = "Failed to load users.";
-   }
-
-}
-getUsers();
