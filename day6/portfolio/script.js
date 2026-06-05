@@ -11,22 +11,19 @@ const projects = [
     title: "GitHub User Search",
     desc: "Search any GitHub user and view their profile stats including repos and followers. Built with vanilla JS and GitHub API.",
     tags: ["JavaScript", "Fetch API", "HTML/CSS"],
-    github: "https://github.com/darshank005/self-learn/blob/main/day5/practice.html",
-    live: "#"
+    github: "https://github.com/darshank005/self-learn/blob/main/day5/practice.html"
   },
   {
     title: "Skill Filter App",
     desc: "Dynamic skill filtering app that renders and filters skills by level using arrays and DOM manipulation.",
     tags: ["JavaScript", "DOM", "Arrays"],
-    github: "https://github.com/darshank005/self-learn/blob/main/day4/practice.html",
-    live: "#"
+    github: "https://github.com/darshank005/self-learn/blob/main/day4/practice.html"
   },
   {
     title: "Portfolio Website",
     desc: "Personal developer portfolio built from scratch with HTML, CSS and JavaScript. Fully responsive.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/darshank005/self-learn/tree/main/day6",
-    live: "#"
   }
 ];
 
