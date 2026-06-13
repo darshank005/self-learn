@@ -1,54 +1,26 @@
-import {useState,useEffect} from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
+import Home from './Home'
+import About from './About'
+import Users from './Users'
+import UserDetail from './UserDetail'
+import Contact from './contact'
 
 function App() {
-  const[users,setUsers] = useState([])
-  const[search,setSearch] = useState('')
-  const [loading,setLoading] = useState(true)
+  return (
+    <div>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/users">Users</Link> | <Link to="/contact">Contact</Link>
+      </nav>
 
-  useEffect(()=> {
-    async function getUsers(){
-      const response = await fetch("https://api.github.com/users")
-      const data = await response.json()
-      setUsers(data)
-      setLoading(false)
-    }
-    getUsers()
-  },[])
-
-const filteredUsers = users.filter(user => user.login.toLowerCase().includes(search.toLowerCase()))
-
- return (
-  <div className="container">
-    <h1>GitHub Users</h1>
-    <input 
-      type="text" 
-      placeholder="Search users..." 
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-      className="search-input"
-    />
-    {loading ? (<p>Loading...</p>):(
-      <div className="users-grid">
-        {filteredUsers.map((user) => (
-          <div key={user.id} className="user-card">
-            <img src={user.avatar_url} alt={user.login} />
-            <p>{user.login}</p>
-            <a href={user.html_url} target="_blank">View Profile</a>
-          </div>
-        ))}
-      </div>
-    )}
-    <div className="users-grid">
-      {filteredUsers.map((user) => (
-        <div key={user.id} className="user-card">
-          <img src={user.avatar_url} alt={user.login} />
-          <p>{user.login}</p>
-          <a href={user.html_url} target="_blank">View Profile</a>
-        </div>
-      ))}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/:username" element={<UserDetail />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
-  </div>
-)
+  )
 }
 
 export default App
